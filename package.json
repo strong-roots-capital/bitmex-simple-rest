@@ -1,5 +1,5 @@
 {
-  "name": "bitmex-simple-rest",
+  "name": "@strong-roots-capital/bitmex-simple-rest",
   "version": "0.0.11",
   "description": "simple rest API wrapper for bitmex",
   "main": "index.js",
@@ -20,5 +20,6 @@
   "bugs": {
     "url": "https://github.com/askmike/bitmex-simple-rest/issues"
   },
-  "homepage": "https://github.com/askmike/bitmex-simple-rest#readme"
+  "homepage": "https://github.com/askmike/bitmex-simple-rest#readme",
+  "private": false
 }
