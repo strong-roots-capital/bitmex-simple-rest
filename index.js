@@ -150,7 +150,7 @@ class BitmexRest {
           socket.setNoDelay(true);
           socket.setTimeout(draft.timeout);
           socket.on('timeout', function() {
-            req.abort();
+            req.destroy();
           });
         }
       });
