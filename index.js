@@ -14,6 +14,7 @@ class BitmexRest {
     this.ua = USER_AGENT;
     this.timeout = 90 * 1000;
     this.expiration = 60 * 1000;
+    this.testnet = false
 
     // keep-alive
     this.agent = new https.Agent({
@@ -41,6 +42,10 @@ class BitmexRest {
 
     if(config.userAgent) {
       this.ua += ' | ' + config.userAgent;
+    }
+
+    if (config.testnet) {
+      this.testnet = config.testnet
     }
   }
 
@@ -78,7 +83,7 @@ class BitmexRest {
       .update(method + path + expires + payload).digest('hex');
 
     const options = {
-      host: 'www.bitmex.com',
+      host: this.testnet ? 'testnet.bitmex.com' : 'www.bitmex.com',
       path,
       method,
       agent: this.agent,
